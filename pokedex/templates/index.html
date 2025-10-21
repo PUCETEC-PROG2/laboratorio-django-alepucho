@@ -6,11 +6,11 @@
     </head>
     <body>
         <div class="container">
-            <div class="bg-primary text-white p-4 text-center">
+            <div class="bg-danger text-white p-4 text-center">
                 <h1>Mi Pokedex</h1>
             </div>
             <p class="p-2">Hola, este es tu primer sitio en Django</p>
-            <h3>"Pokémons disponibles:"</h3>
+            <h3>Pokémons disponibles:</h3>
             <ul class="list-group">
                 {% for pokemon in pokemons %}
                 <li class="list-group-item">
@@ -18,7 +18,7 @@
                 </li>
                 {% endfor %}
             </ul>
-            <h3>"Entrenadores disponibles:"</h3>
+            <h3>Entrenadores disponibles:</h3>
             <ul class="list-group">
                 {% for trainer in trainers %}
                 <li class="list-group-item">
