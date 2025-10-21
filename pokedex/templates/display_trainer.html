@@ -9,22 +9,14 @@
             <div class="bg-primary text-white p-4 text-center">
                 <h1>Mi Pokedex</h1>
             </div>
-            <p class="p-2">Hola, este es tu primer sitio en Django</p>
-            <h3>"Pokémons disponibles:"</h3>
-            <ul class="list-group">
-                {% for pokemon in pokemons %}
-                <li class="list-group-item">
-                    <a href="pokemon/{{pokemon.id}}/">{{ pokemon | capfirst }}</a>
-                </li>
-                {% endfor %}
-            </ul>
-            <h3>"Entrenadores disponibles:"</h3>
-            <ul class="list-group">
-                {% for trainer in trainers %}
-                <li class="list-group-item">
-                    <a href="trainer/{{trainer.id}}/">{{ trainer | capfirst }}</a>
-                </li>
-                {% endfor %}
+            <p>Has elegido al entrenador: <strong>{{ trainer | capfirst }}</strong></p>
+            <h3>Características:</h3>
+            <ul>
+                <li>Nombre: {{trainer.name}}</li>
+                <li>Apellido: {{trainer.last_name}}</li>
+                <li>Edad: {{trainer.years}}</li>
+                <li>Nivel: {{trainer.level}}</li>
+                <li>Fecha de nacimiento: {{trainer.datebirth}}</li>
             </ul>
         </div>
     </body>
