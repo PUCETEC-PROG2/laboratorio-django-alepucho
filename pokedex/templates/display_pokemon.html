@@ -1,12 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
 <p>
-  Has elegido el pokemon: <strong>{{ pokemon|capfirst }}</strong>
+  Has elegido el pokemon: <strong>{{ pokemon.name|capfirst }}</strong>
 </p>
 <h3>Características:</h3>
 <ul>
   <li>Tipo: {{ pokemon.type }}</li>
   <li>Peso: {{ pokemon.weight }}</li>
   <li>Altura: {{ pokemon.height }}</li>
+  <li>Entrenador: {% if pokemon.trainer %}{{ pokemon.trainer.name|capfirst }}{% else %}Sin entrenador{% endif %}</li>
 </ul>
+{% if pokemon.picture %}
+  <div class="mt-4 text-center">
+    <img src="{{ pokemon.picture.url }}" alt="Foto de {{ pokemon.name }}" class="img-fluid rounded" style="max-width: 320px;" />
+  </div>
+{% else %}
+  <p class="text-muted">(Sin imagen disponible)</p>
+{% endif %}
+<a href="{% url "pokedex:index" %}" class="btn btn-secondary mt-3">Regresar al índice</a>
 {% endblock %}
