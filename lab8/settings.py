@@ -121,6 +121,11 @@ STATIC_URL = 'static/'
 MEDIA_URL='/media/'
 MEDIA_ROOT= BASE_DIR / 'media'
 
+
+LOGIN_REDIRECT_URL = 'pokedex:index'
+LOGOUT_REDIRECT_URL = 'pokedex:index'
+LOGIN_URL = 'pokedex:login'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
