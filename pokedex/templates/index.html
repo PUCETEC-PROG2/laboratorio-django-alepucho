@@ -23,7 +23,7 @@
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">{{ pokemon.name|capfirst }}</h5>
               <p class="card-text">Entrenador: {% if pokemon.trainer %}{{ pokemon.trainer.name|capfirst }}{% else %}Sin entrenador{% endif %}</p>
-              <p class="card-text">Peso: {{ pokemon.weight }} mts</p>
+              <p class="card-text">Peso: {{ pokemon.weight }} kg</p>
               <a href="{% url 'pokedex:pokemon' pokemon.id %}" class="btn btn-custom-primary mt-3">
                   <i class="fa-regular fa-eye"></i>
                 </a>
