@@ -1,0 +1,65 @@
+/* Theme overrides to give Bootstrap a Pokémon palette. Loaded after bootstrap.min.css and custom.css */
+:root{
+  --poke-red: #ff1a1a;
+  --poke-red-dark: #b30000;
+  --poke-blue: #3B4CCA;
+  --poke-yellow: #ffde00;
+  --poke-dark: #1f1f1f;
+  --poke-light: #f8f9fa;
+}
+
+/* Buttons */
+.btn-primary{
+  background-color: var(--poke-red) !important;
+  border-color: var(--poke-red) !important;
+  color: #fff !important;
+}
+.btn-primary:hover, .btn-primary:focus{
+  background-color: #e01212 !important;
+  border-color: #c00 !important;
+}
+.btn-secondary{
+  background-color: var(--poke-blue) !important;
+  border-color: var(--poke-blue) !important;
+}
+.btn-custom-primary{ background-color: var(--poke-red) !important; border-color: var(--poke-red) !important; }
+.btn-custom-secondary{ background-color: var(--poke-blue) !important; border-color: var(--poke-blue) !important; }
+
+/* Background / text */
+.bg-primary{ background-color: var(--poke-red) !important; }
+.text-primary{ color: var(--poke-red) !important; }
+.text-warning{ color: var(--poke-yellow) !important; }
+.bg-warning{ background-color: var(--poke-yellow) !important; }
+
+/* Navbar tweaks */
+.navbar-custom{
+  background: linear-gradient(90deg, rgba(59,76,202,0.98), rgba(255,26,26,0.95));
+}
+.navbar-brand, .navbar-nav .nav-link{ color: #fff !important; }
+.navbar-nav .nav-link.active{ color: var(--poke-yellow) !important; font-weight:600; }
+
+/* Cards */
+.card-custom{ border-radius: 0.75rem; overflow:hidden; }
+.card-custom .card-body{ background: linear-gradient(180deg, #ffffff, #fff9e6); }
+
+/* Inputs focus color */
+.form-control:focus{ border-color: var(--poke-red) !important; box-shadow: 0 0 0 .2rem rgba(255,26,26,.15) !important; }
+
+/* Links */
+a{ color: var(--poke-blue); }
+a:hover{ color: var(--poke-red); }
+
+/* Small utility */
+.table thead th{ background-color: rgba(59,76,202,0.06); }
+
+/* Make badges more poké-like */
+.badge-primary{ background-color: var(--poke-red) !important; }
+.badge-secondary{ background-color: var(--poke-blue) !important; }
+
+/* Footer / general background */
+body{ background: linear-gradient(180deg, #fff, #fffefd); color: var(--poke-dark); }
+
+/* Keep everything responsive and readable */
+@media (max-width:576px){
+  .site-header img{ max-height:48px; }
+}
