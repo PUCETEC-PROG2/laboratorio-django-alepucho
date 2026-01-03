@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from pokedex.models import Pokemon
+from pokedex.models import Pokemon, Trainer
 from django.core.files.base import ContentFile
 import base64
 class PokemonSerializer(serializers.ModelSerializer):
@@ -23,3 +23,9 @@ class PokemonSerializer(serializers.ModelSerializer):
             except Exception:
                 raise serializers.ValidationError("Invalid base64 image")
         return None
+
+
+class TrainerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Trainer
+        fields = '__all__'
