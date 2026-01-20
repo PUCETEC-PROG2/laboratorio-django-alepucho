@@ -4,11 +4,16 @@ from django.core.files.base import ContentFile
 import base64
 class PokemonSerializer(serializers.ModelSerializer):
     
-    picture=serializers.CharField(required=False, allow_blank=True)
+    picture=serializers.CharField(required=True, allow_blank=True)
     
     class Meta:
         model = Pokemon
         fields = '__all__'
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if self.context.get('request') and self.context['request'].method == 'PUT':
+            self.fields['picture'].required = False
         
     def validate_picture(self, value):
         if value:
@@ -23,8 +28,6 @@ class PokemonSerializer(serializers.ModelSerializer):
             except Exception:
                 raise serializers.ValidationError("Invalid base64 image")
         return None
-
-
 class TrainerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Trainer
